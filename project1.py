@@ -42,14 +42,23 @@ def avg_bill_Mmass4k(data, min = 4200): # columns: gender, mass, bill length - 3
     else:
         return None
     
+def report(filename, avg1, avg2):
+    with open(filename, "w") as file:
+        file.write("Data Analysis Calculations of the Penguin CSV File\n\n")
+
+        file.write("What is the average body mass of all female Adelie penguins in Dream island?\n")
+        file.write(avg1 + "\n\n")
+        
+        file.write("What is the average bill length of male penguins above 4200g?\n")
+        file.write(avg2)
+
 
 def main():
     data = filedic('penguins.csv')
 
-    print("What is the average body mass of all female Adélie penguins in Dream island?")
-    print(avg_mass_Fadelie_Dream(data))
-    print("\nWhat is the average bill length of male penguins above the body mass of 4,200g?")
-    print(avg_bill_Mmass4k(data))
+    x = avg_mass_Fadelie_Dream(data)
+    y = avg_bill_Mmass4k(data)
 
+    report("penguin_report.txt", x, y)
 
 main()
