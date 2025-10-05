@@ -24,16 +24,24 @@ def avg_mass_Fadelie_Dream(data): # columns: species, island, gender, mass
 
     if len:
         avg = sum(masses) / len(masses)
-        return f"The Average Mass of All Female Adelie Penguins in Dream Island is: {avg:.2f}g"
+        return f"{avg:.2f} grams"
     else:
         return None
 
 
+
+def avg_bill_Mmass4k(data, min = 4200):
+    bill_lengths = []
+    for line in data:
+        if line['sex'] == 'male':
+            if float(line['body_mass_g']) > min:
+                bill_lengths.append(float(line['bill_length_mm']))
+    if bill_lengths:
+        avg = sum(bill_lengths) / len(bill_lengths)
+        return f"{avg:.2f} millimeters"
+    else:
+        return None
+    
 data = filedic('penguins.csv')
-avg = avg_mass_Fadelie_Dream(data)
-print(avg)
-
-
-
-
-# def avg_bill_Mmass4k(data, min = 4200):
+print(avg_mass_Fadelie_Dream(data))
+print(avg_bill_Mmass4k(data))
