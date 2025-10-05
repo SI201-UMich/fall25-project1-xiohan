@@ -16,7 +16,7 @@ def filedic(filename):
             data.append(row)
     return data
 
-def avg_mass_Fadelie_Dream(data): # columns: species, island, gender, mass
+def avg_mass_Fadelie_Dream(data): # columns: species, island, gender, mass - 4
     masses = []
     for line in data:
         if line['species'] == 'Adelie' and line['island'] == 'Dream' and line['sex'] == 'female':
@@ -30,7 +30,7 @@ def avg_mass_Fadelie_Dream(data): # columns: species, island, gender, mass
 
 
 
-def avg_bill_Mmass4k(data, min = 4200):
+def avg_bill_Mmass4k(data, min = 4200): # columns: gender, mass, bill length - 3
     bill_lengths = []
     for line in data:
         if line['sex'] == 'male':
@@ -42,6 +42,14 @@ def avg_bill_Mmass4k(data, min = 4200):
     else:
         return None
     
-data = filedic('penguins.csv')
-print(avg_mass_Fadelie_Dream(data))
-print(avg_bill_Mmass4k(data))
+
+def main():
+    data = filedic('penguins.csv')
+
+    print("What is the average body mass of all female Adélie penguins in Dream island?")
+    print(avg_mass_Fadelie_Dream(data))
+    print("\nWhat is the average bill length of male penguins above the body mass of 4,200g?")
+    print(avg_bill_Mmass4k(data))
+
+
+main()
