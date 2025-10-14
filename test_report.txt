@@ -1,0 +1,7 @@
+Data Analysis Calculations of the Penguin CSV File
+
+What is the average body mass of all female Adelie penguins in Dream island?
+The average mass is 3050.00 grams
+
+What is the average bill length of and max flipper length of penguins in 2007?
+The average bill length is 41.25 millimeters, and the max flipper length is 210 millimeters.

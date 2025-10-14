@@ -1,0 +1,4 @@
+Data Analysis Calculations of the Penguin CSV File
+
+What is the average body mass of all female Adelie penguins in Dream island?
+What is the average bill length of and max flipper length of penguins in 2007?

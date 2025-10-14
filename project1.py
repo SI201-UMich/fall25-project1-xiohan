@@ -23,7 +23,8 @@ def avg_mass_Fadelie_Dream(data): # columns: species, island, gender, mass - 4
     masses = []
     for line in data:
         if line['species'] == 'Adelie' and line['island'] == 'Dream' and line['sex'] == 'female':
-            masses.append(float(line['body_mass_g']))
+            if line['body_mass_g'] != "NA":
+                masses.append(float(line['body_mass_g']))
 
     if masses:
         return f"The average mass is {avg(masses):.2f} grams"
@@ -53,10 +54,12 @@ def report(filename, avg1, avg2):
         file.write("Data Analysis Calculations of the Penguin CSV File\n\n")
 
         file.write("What is the average body mass of all female Adelie penguins in Dream island?\n")
-        file.write(avg1 + "\n\n")
+        if avg1 is not None:
+            file.write(avg1 + "\n\n")
         
         file.write("What is the average bill length of and max flipper length of penguins in 2007?\n")
-        file.write(avg2)
+        if avg2 is not None:    
+            file.write(avg2)
 
 
 def main():
