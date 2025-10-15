@@ -54,12 +54,19 @@ def report(filename, avg1, avg2):
         file.write("Data Analysis Calculations of the Penguin CSV File\n\n")
 
         file.write("What is the average body mass of all female Adelie penguins in Dream island?\n")
-        if avg1 is not None:
-            file.write(avg1 + "\n\n")
-        
-        file.write("What is the average bill length of and max flipper length of penguins in 2007?\n")
-        if avg2 is not None:    
+        if avg1 != None:
+            file.write(avg1 + "\n")
+        else:
+            file.write("No data available")
+
+        file.write("\nWhat is the average bill length of and max flipper length of penguins in 2007?\n")
+
+        if avg2 != None:
             file.write(avg2)
+        else:
+            file.write("No data available")
+
+
 
 
 def main():
@@ -68,6 +75,6 @@ def main():
     x = avg_mass_Fadelie_Dream(data)
     y = avg_bill_maxflip_2007(data)
 
-    report("penguin_report.txt", x, y)
+    report("FINAL_penguin_report.txt", x, y)
 
 main()
